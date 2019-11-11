@@ -1,4 +1,5 @@
-# train_facts_for_android
+# Train Facts
+## for Android
 
 Train Facts is an app by Adrian to keep you informed with what you need to know. Schedules, times, alarms (and train facts!)
 
