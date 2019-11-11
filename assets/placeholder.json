@@ -1,0 +1,26 @@
+{
+  "1": {
+    "title": "ichi",
+    "sub": "ohayou gozaimasu",
+	"image": "~/assets/img/ichi.jpg"
+    "date": "05/01/2005",
+    "time": "08:15:00",
+    "info": "The tower is the primary television and radio broadcast site for the Kantō region; the older Tokyo Tower no longer gives complete digital terrestrial television broadcasting coverage because it is surrounded by high-rise buildings. Skytree was completed on Leap Day 29 February 2012 with the tower opening to the public on 22 May 2012.7 The tower is the centrepiece of a large commercial development funded by the Tobu Railway which owns the complex and a group of six terrestrial broadcasters headed by NHK. Trains stop at the adjacent Tokyo Skytree Station and nearby Oshiage Station. The complex is 7 km 4.3 mi north-east of Tokyo Station."
+  },
+  "2": {
+    "title": "ni",
+    "sub": "terebi geemu",
+	"image": "~/assets/img/ni.jpg"
+    "date": "06/01/2005",
+    "time": "09:30:00",
+    "info": "The ride from Tokyo to Osaka is a reasonable 2.5-3 hours, with no transfers required. The speediest bullet train, the Nozomi, will get you from Tokyo Station to Shin-Osaka in just 2 hours 30 minutes. Taking the Hikari will add an extra 30 minutes or so to your travel time. The sluggish Kodama, the oldest in the fleet, takes closer to four hours, and is generally avoided except by last-minute riders and super discount-seekers. If you’re using a Japan Rail Pass, you’ll be limited to the Hikari and slower bullet trains, but this won’t make much difference. The route is popular, served by multiple Shinkansen every hour. Note: Shin-Osaka Station is actually a couple of stops away from Osaka Station proper—but your bullet train ticket will cover the additional fare on the JR Line. Kyoto is just half an hour off by regular train, or the next bullet train stop over (15 minutes away)."
+  },
+  "3": {
+    "title": "san",
+    "sub": "moshi moshi",
+	"image": "~/assets/img/san.jpg"
+    "date": "07/01/2005",
+    "time": "10:45:00",
+    "info": "Osaka is a large port city and commercial center on the Japanese island of Honshu. It's known for its modern architecture, nightlife and hearty street food. The 16th-century shogunate Osaka Castle, which has undergone several restorations, is its main historical landmark. It's surrounded by a moat and park with plum, peach and cherry-blossom trees. Sumiyoshi-taisha is among Japan’s oldest Shinto shrines."
+  }
+}
