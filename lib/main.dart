@@ -4,10 +4,10 @@
 import 'package:flutter/material.dart';
 import 'package:train_facts_for_android/timeline.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MainApp());
 
 /// main app widget
-class MyApp extends StatelessWidget {
+class MainApp extends StatelessWidget {
   static const String _title = 'Train Facts';
 
   @override
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title)),
-        body: MyStatelessWidget(),
+        body: MainLine(),
       ),
     );
   }
