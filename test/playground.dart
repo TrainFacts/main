@@ -1,8 +1,12 @@
-// Based off the example at https://flutter.dev/docs/cookbook/networking/fetch-data and
-// and modified for use by Adrian Widjaja under the BSD License
-// Card format based off the example at https://api.flutter.dev/flutter/material/Card-class.html
+// From https://flutter.dev/docs/cookbook/networking/background-parsing
 
-// C
+
+// Changing the names of class, objects and variables seem to be dangerous. Is it worth it?
+// Well, no. Adrian, open a issue on GitHub for this and change it IF you have time.
+// Otherwise, you need to do the following:
+//    1. Import Text into Cards, that open full-screen dialogs as demonstrated on Flutter Gallery
+//    2. Fix your JSON file to match https://jsonplaceholder.typicode.com/posts format.
+//    3. Figure out how to automatically land on dates.
 
 import 'dart:async';
 import 'dart:convert';
@@ -10,8 +14,6 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-part "modelclass.dart";
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
@@ -26,6 +28,24 @@ List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
+}
+
+class Photo {
+  final int userId;
+  final int id;
+  final String title;
+  final String body;
+
+  Photo({this.userId, this.id, this.title, this.body});
+
+  factory Photo.fromJson(Map<String, dynamic> json) {
+    return Photo(
+      userId: json['userId'] as int,
+      id: json['id'] as int,
+      title: json['title'] as String,
+      body: json['body'] as String,
+    );
+  }
 }
 
 void main() => runApp(MyApp());
