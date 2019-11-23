@@ -2,8 +2,6 @@
 // and modified for use by Adrian Widjaja under the BSD License
 // Card format based off the example at https://api.flutter.dev/flutter/material/Card-class.html
 
-// C
-
 import 'dart:async';
 import 'dart:convert';
 
@@ -12,75 +10,49 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 part "modelclass.dart";
+part "postlist.dart";
 
-Future<List<Photo>> fetchPhotos(http.Client client) async {
+Future<List<Post>> fetchPost() async {
   final response =
-  await client.get('https://jsonplaceholder.typicode.com/posts');
-
-  // Use the compute function to run parsePhotos in a separate isolate.
-  return compute(parsePhotos, response.body);
+      await http.get('https://trainfacts.github.io/assets/main.json');
+  return compute(parsePost, response.body);
 }
 
-// A function that converts a response body into a List<Photo>.
-List<Photo> parsePhotos(String responseBody) {
+// A function that converts a response body into a List<Post>.
+List<Post> parsePost(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
-  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
+  return parsed.map<Post>((json) => Post.fromJson(json)).toList();
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(MainLine());
 
-class MyApp extends StatelessWidget {
+class MainLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appTitle = 'Isolate Demo';
+    final appTitle = 'Train Facts';
 
     return MaterialApp(
       title: appTitle,
-      home: MyHomePage(title: appTitle),
+      home: MainLineState(title: appTitle),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MainLineState extends StatelessWidget {
   final String title;
 
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MainLineState({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: FutureBuilder<List<Photo>>(
-        future: fetchPhotos(http.Client()),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) print(snapshot.error);
-
-          return snapshot.hasData
-              ? PhotosList(photos: snapshot.data)
-              : Center(child: CircularProgressIndicator());
-        },
-      ),
-    );
-  }
-}
-
-class PhotosList extends StatelessWidget {
-  final List<Photo> photos;
-
-  PhotosList({Key key, this.photos}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-      ),
-      itemCount: photos.length,
-      itemBuilder: (context, index) {
-        return Image.network(photos[index].title);
+    return FutureBuilder<List<Post>>(
+      future: fetchPost(),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) print(snapshot.error);
+        return snapshot.hasData
+            ? PostList(post: snapshot.data)
+            : Center(child: CircularProgressIndicator());
       },
     );
   }
