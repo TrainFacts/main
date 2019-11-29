@@ -23,6 +23,3 @@ class Post {
     );
   }
 }
-
-// Photo = Post
-// fetchPhotos() = fetchPost()

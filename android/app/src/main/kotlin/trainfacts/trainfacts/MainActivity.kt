@@ -1,4 +1,4 @@
-package trainfacts.train_facts_for_android
+package trainfacts.trainfacts
 
 import android.os.Bundle
 

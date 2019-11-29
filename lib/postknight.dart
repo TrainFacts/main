@@ -1,9 +1,9 @@
 part of "timeline.dart";
 
-class PostList extends StatelessWidget {
+class PostKnight extends StatelessWidget {
   final List<Post> post;
 
-  PostList({Key key, this.post}) : super(key: key);
+  PostKnight({Key key, this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class PostList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Card(
               child: ListTile(
-                  title: Text(post[index].title ?? 'adrian screwed up - error code 1',
+                  title: Text(post[index].title ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)),
-                  subtitle: Text(post[index].subtitle ?? 'adrian screwed up - error code 1'),
+                  subtitle: Text(post[index].subtitle ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error'),
                   onTap: () {
                     showModalBottomSheet(
                         context: context,
@@ -23,27 +23,27 @@ class PostList extends StatelessWidget {
                             child: new Wrap(
                               children: <Widget>[
                                 new ListTile(
-                                    title: Text(post[index].title ?? 'adrian screwed up - error code 1',
+                                    title: Text(post[index].title ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error',
                                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0)),
                                     onTap: () => {}
                                 ),
                                 new ListTile(
-                                    title: Text(post[index].subtitle ?? 'adrian screwed up - error code 1',
-                                        style: TextStyle(fontSize: 20.0)),
+                                    title: Text(post[index].subtitle ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error',
+                                        style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
                                     onTap: () => {}
                                 ),
                                 new ListTile(
-                                  title: new Text(post[index].body ?? 'Error code 1 - You shouldn\'t be seeing this message right now! If you are, please email adrian.marcus.widjaja@gmail.com.'),
+                                  title: new Text(post[index].body ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error'),
                                   onTap: () => {},
                                 ),
                                 new ListTile(
                                   leading: new Icon(Icons.calendar_today),
-                                  title: new Text(post[index].date ?? 'adrian screwed up - error code 1'),
+                                  title: new Text(post[index].date ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error'),
                                   onTap: () => {},
                                 ),
                                 new ListTile(
                                   leading: new Icon(Icons.access_time),
-                                  title: new Text(post[index].time ?? 'adrian screwed up - error code 1'),
+                                  title: new Text(post[index].time ?? 'ERROR: Exception Code 1 – trainfacts.github.io/error'),
                                   onTap: () => {},
                                 ),
                               ],
